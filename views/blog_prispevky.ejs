@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-170994973-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
+            gtag("config", "UA-170994973-1");
+        </script>
+        
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Blog - Co podniknout</title>
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon.ico" />
+
+        <meta name="description" content="Kromě samotných výletů jsme se rozhodli zpracovat i blog, popisující naše zážitky ještě více do detailu a znázorňující několikadenní výlety, ze kterých čerpáme na CoPodniknout.cz" />
+        <meta name="keywords" content="blog, copodniknout, co podniknout, výlet, výlety, tipy" />
+        <meta name="copyright" content="copodniknout.cz" />
+        <meta name="robots" content="all,follow" />
+        <meta name="author" content="Dominik Richter" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://blog.copodniknout.cz/images/blog/earthmap.png" />
+        <meta property="og:image:alt" content="blog co podniknout" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="800" />
+        <meta property="og:locale" content="cs_CZ" />
+        <meta property="og:site_name" content="blog.copodniknout.cz - co podniknout, ať víte, jak jsme se měli" />
+        <meta property="og:title" content="Všechny blogy - co podniknout, ať víte, jak jsme se měli" />
+        <meta property="og:url" content="https://blog.copodniknout.cz/" />
+        <meta property="og:description" content="Už jsme vyzkoušeli spousty výletů, ale kompletní blog z několikadenních dovolených... to tu ještě nebylo" />
+
+
+        <!-- Google fonts -->
+        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Lora&family=Montserrat:wght@300;500&display=swap" as="style" onload="this.rel='stylesheet'" />
+
+        <!-- CSS stylesheets -->
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="/css/styles_blog_prispevky.css" />
+
+        <!-- Font Awesome -->
+        <script async src="https://kit.fontawesome.com/4b1b0d5500.js" crossorigin="anonymous"></script>
+
+        <!-- Bootstrap -->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"
+        ></script>
+
+        <!-- Button script -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script async src="/scripts/button_script.js"></script>
+        <script async src="/scripts/up-anim.js"></script>
+
+        <!-- aos animation -->
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    </head>
+    <body>
+        <div id="cookies-eu-banner" style="display: none">
+            <div id="cookies-eu-banner_text">Tento web používá k poskytování služeb a analýze návštěvnosti soubory cookie. Používáním tohoto webu s tím souhlasíte.</div>
+            <div id="cookies-eu-banner_buttons">
+                <!-- <a href="./read-more.html" id="cookies-eu-more">Read more</a> -->
+                <button id="cookies-eu-accept">Rozumím</button>
+            </div>
+        </div>
+
+        <a id="back2Top" href="#">Nahoru</a>
+
+        <div class="container-fluid">
+            <!-- Nav Bar -->
+            <nav class="navbar fixed-top navbar-expand-lg navbar-dark nav-custom">
+                <a class="navbar-brand mr-auto" href="blog.html"
+                    ><h1>Blog<small style="font-size: xx-small; margin-left: 15px">CoPodniknout.cz</small></h1></a
+                >
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarTogglerDemo01"
+                    aria-controls="navbarTogglerDemo01"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <form class="form-inline" action="/vyhledavani" method="post">
+                                <input class="form-control" type="search" name="vyhledavani" placeholder="Příspěvek, který hledáte" aria-label="Search" />
+                            </form>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link a-navbar" href="https://copodniknout.cz">Výlety</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link a-navbar" href="blog.copodniknout.cz/#content">Nejnovější</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link a-navbar" href="blog.copodniknout.cz/#o-nas">O nás</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link a-navbar" href="blog.copodniknout.cz/#mista">Naše cesty</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <section id="banner">
+            <div class="text_center" data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="200">
+                <div id="blog_title"><h2>BLOG</h2></div>
+                <div id="blog_subtitle"><h2>Co Podniknout</h2></div>
+            </div>
+        </section>
+        <section id="content">
+            <h2>Všechny příspěvky</h2>
+
+            <div id="flexbox">
+                <% var count = 0; %> <% for(i=0; i < blogs.length; i++) { %> <% if(count < 3){ %>
+                    <div class="grid-item">
+                        <div class="item-inner" data-aos="fade-up" data-aos-offset="100" data-aos-duration="1000">
+                            <div class="item-title"><%= blogs[i].title %></div>
+                            <img src="/images/blog/bluehouse1920x1080.jpg" alt="" />
+                            <div class="item-inner-text">
+                                <% try{ %> <% if((blogs[i].content_introduction[0]).length > 150) { %>
+                                <p><%= (blogs[i].content_introduction[0]).substr(0, 135) %> ...</p>
+                                <% } if((blogs[i].content_introduction[0]).length < 150) { %>
+                                <p><%= blogs[i].content_introduction[0] %></p>
+                                <% } %> <% } catch{ %> <% if((blogs[i].content_text[0][0]).length > 150) { %>
+                                <p><%= (blogs[i].content_text[0][0]).substr(0, 135) %> ...</p>
+                                <% } else { %>
+                                <p><%= blogs[i].content_text[0][0] %></p>
+                                <% } %> <% } %>
+                            </div>
+                            <a href="/blog/<%= blogs[count].url %>"
+                                ><button class="button"><span>Přečíst </span></button></a
+                            >
+                        </div>
+                    </div>
+                    <% count++; %> <% } else { %> <% break; }%> <% } %>
+            </div>
+            <div id="buttons">
+                <a href="/blog"
+                    ><button class="button blink"><span>DOMŮ </span></button></a
+                >
+            </div>
+        </section>
+
+        <footer>
+            <a target="_blank" href="https://www.instagram.com/copodniknout.cz/">
+                <i class="footer-icon fab fa-instagram"></i>
+            </a>
+            <a href="mailto:copodniknout@gmail.com">
+                <i class="footer-icon fas fa-envelope"></i>
+            </a>
+            <p>
+                <a href="https://copodniknout.cz/">Výlety - Co podniknout</a> | <a href="https://blog.copodniknout.cz/prispevky">Všechny příspěvky</a> |
+                <a href="https://blog.copodniknout.cz/#nejnovejsi">Nejnovější příspěvky</a> | <a href="https://blog.copodniknout.cz/#o-nas">O nás</a> |
+                <a href="https://blog.copodniknout.cz/#mista">Naše cesty</a>
+            </p>
+            <p>Všechna práva vyhrazena. Veškerý obsah této webové stránky podléhá autorským právům.</p>
+            <p>© Copyright 2020 copodniknout.cz - Ať každý ví, co podniknout.</p>
+        </footer>
+
+        <script>
+            AOS.init();
+        </script>
+        <script src="/scripts/cookies-eu-banner.min.js"></script>
+        <script>
+            new CookiesEuBanner(function () {});
+        </script>
+    </body>
+</html>

@@ -1,0 +1,395 @@
+body{
+    font-family: "Montserrat";
+    font-weight: 300;
+}
+a:link{
+    text-decoration: none;
+}
+.navbar > a, .dropdown > a, .nav-item > a, .dropdown > div.dropdown-menu > a,.navbar > a.navbar-brand{
+    position: relative;
+}
+h5{
+    color: black;
+}
+h1{
+    font-weight: 300;
+}
+h2{
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+h3{
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+/* Body */
+/* Nav bar*/
+.nav-custom {
+    background-color:  #333333;
+    /* #004445; */
+}
+.dropdown-item.active, .dropdown-item:active {
+    background-color: #f6f6f6;
+    font-weight: bold;
+    color: black;
+}
+a.dropdown-item:hover{
+    font-weight: bold;
+}
+.navbar-brand{
+    color: rgb(255, 255, 255);
+    padding-right: 5.9%;
+}
+.container-fluid{
+    padding: 0;
+    height: 10%;
+}
+.form-inline .form-control {
+    width: 500px;
+    text-align: center;
+    margin-left: 24%;
+    position: static;
+}
+a.navbar-brand > h1{
+    font-size: 1.25rem;
+    padding: 0px;
+    margin: 0px;
+}
+.dropdown > a::before, .nav-item > a::before, .dropdown > div.dropdown-menu > a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0px;
+    background-color: honeydew;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out 0s;
+}
+.navbar > a.navbar-brand > h1::before {
+    content: "";
+    position: absolute;
+    width: 148px;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: honeydew;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out 0s;
+}
+.dropdown > a:hover::before, .nav-item > a:hover::before, .navbar > a.navbar-brand > h1:hover::before, .dropdown > div.dropdown-menu > a:hover::before {
+    visibility: visible;
+    transform: scaleX(1);
+}
+@media (max-width: 1077px){
+    .form-inline .form-control {
+        width: 440px;
+    }
+    .dropdown > a:hover::before, .nav-item > a:hover::before, .navbar > a.navbar-brand > h1:hover::before, .dropdown > div.dropdown-menu > a:hover::before {
+        visibility: hidden;
+    }
+}
+@media (min-width: 1500px){
+    .form-inline .form-control {
+        width: 600px;
+        margin-left: 14%;
+    }
+}
+@media (max-width: 991px){
+    .form-inline .form-control {
+        display: inline-block;
+        width: auto;
+        vertical-align: middle;
+        margin: auto;
+    }
+    .navbar{
+        text-align: center;
+    }
+}
+/* Obrazky */
+#title_nakole, #title_prodva, #title_hradyazamky, #title_rozhlednyazriceniny, #title_prochazkyprirodou, #title_srodinou, #title_vyhledavani{
+    /* background-image: url("../images/uvodni/reka.jpg"); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 300px;
+    max-width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+#title_nakole{
+    background-image: url("../images/category/na_kole_seznam.jpg");
+}
+#title_hradyazamky{
+    background-image: url("../images/category/hrady_a_zamky_seznam.jpg");
+}
+#title_rozhlednyazriceniny {
+    background-image: url("../images/category/rozhledny_a_zriceniny_seznam.jpg");
+}
+#title_prochazkyprirodou {
+    background-image: url("../images/category/prochazky_prirodou_seznam.jpg");
+}
+#title_prodva{
+    background-image: url("../images/category/pro_dva_seznam.jpg");
+}
+#title_srodinou{
+    background-image: url("../images/category/s_rodinou_seznam.jpg");
+}
+#title_vyhledavani{background-image: url("../images/uvodni/cesta1916x646.jpg");}
+
+.obrazek{
+    max-height: 30%;
+    width: 100%;
+}
+ /* seznam událostí */
+ #udalosti{
+    padding: 3%;
+    text-align: center;
+    background-color: white;
+    overflow: hidden;
+}
+ #error{
+     margin: 5% auto;
+ }
+ #udalosti > p:first-child{
+     margin-bottom: 4%;
+ }
+.nadpis{
+    text-align: center;
+    margin: auto;
+    border: solid;
+    border-color: #DAA520;
+    min-width: 260px;
+    max-width: 430px;
+    padding: 3% 3%;
+    margin-bottom: 6%;
+}
+.udalost_center{
+    align-content: center;
+    margin: 0 auto;
+    max-width: 70%;
+    max-height: 15%;
+}
+.udalost_center:hover{
+    background-color: #f6f6f6;
+}
+.imgCenter{
+    margin: auto;
+    padding-left: 10px;
+    width: 100%;
+}
+a.aTag{
+    text-decoration: none;
+    color: black;
+}
+.card{
+    border: none;
+}
+.line{
+    color: rgb(231, 232, 236);
+    width: 70%;
+    line-height: 15px;
+}
+.nadpisCentered{
+    position: absolute;
+    top: 48%;
+    right: 50%;
+    bottom: 70%;
+    transform: translate(50%, 50%) !important;
+    color: white;
+    text-align: center;
+    width: 70%;
+} 
+div.nadpisCentered > h2{
+    font-weight: 800;
+    font-size: 3.5rem;
+}
+.textCentered {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 600;
+    font-size: 3rem;
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.errorimage2 {
+    display: none;
+}
+.alignRight{
+    float: right;
+}
+.alignLeft{
+    float: left;
+}
+@media (max-width: 1600px){
+    #title_nakole, #title_prodva, #title_hradyazamky, #title_rozhlednyazriceniny, #title_prochazkyprirodou, #title_srodinou, #title_vyhledavani{
+        height: 270px;
+    }
+    div.nadpisCentered > h2{
+        font-size: 3rem;
+    }
+}
+@media (max-width: 767px){
+    #title_nakole, #title_prodva, #title_hradyazamky, #title_rozhlednyazriceniny, #title_prochazkyprirodou, #title_srodinou, #title_vyhledavani{
+        height: 200px;
+    }
+    #title_nakole{background-image: url("../images/category/na_kole_seznam_mini.jpg");}
+    #title_prodva{background-image: url("../images/category/pro_dva_seznam_mini.jpg");}
+    #title_hradyazamky{background-image: url("../images/category/hrady_a_zamky_seznam_mini.jpg");}
+    #title_rozhlednyazriceniny{background-image: url("../images/category/rozhledny_a_zriceniny_seznam_mini.jpg");}
+    #title_prochazkyprirodou{background-image: url("../images/category/prochazky_prirodou_seznam_mini.jpg");}
+    #title_srodinou{background-image: url("../images/category/s_rodinou_seznam_mini.jpg");}
+    #title_vyhledavani{background-image: url("../images/uvodni/cesta1916x646_mini.jpg");}
+    div.nadpisCentered > h2{
+        font-size: 2rem;
+    }
+    .nadpisCentered{
+        top: 44%;
+        width: 250px;
+    } 
+    .navbar-brand{
+        padding-right: 0;
+    }
+    .col-md-8{
+        display: none;
+    }
+    .imgCenter{
+        width: 80%;
+    }
+    .line{
+        width: 57%;
+    }
+    .textCentered{
+        display: inline-block;
+    }
+    .nadpis{
+        margin-top: 2%;
+    }
+    div.textCentered{
+        font-size: xx-large;
+    }
+    #udalosti > h2 {
+        font-size: x-large;
+    }
+    #error{
+        margin: 35% auto;
+    }
+    .errorimage2 {
+        display: inline-block;
+    }
+    .errorimage1 {
+        display: none;
+    }
+}
+
+@media (max-width: 600px){
+    .col-md-8{
+        display: none;
+    }
+    .imgCenter{
+        width: 80%;
+    }
+    .udalost_center{
+        max-width: 100%;
+    }
+    .line{
+        width: 80%;
+    }
+    .textCentered{
+        display: inline-block;
+    }
+    .nadpis{
+        margin-top: 2%;
+    }
+    div.textCentered{
+        font-size: xx-large;
+    }
+    #udalosti > h2 {
+        font-size: large;
+    }
+    h3{
+        font-size: 2.2rem;
+        font-weight: 600;
+    }
+    #error{
+        margin: 40% auto;
+    }
+    .errorimage2 {
+        display: inline-block;
+    }
+    .errorimage1 {
+        display: none;
+    }
+}
+/* Footer Section */
+#footer{
+    text-align: center;
+    background-color: #333333;
+    /* #2c786c; */
+    padding-bottom: 5px;
+    margin-bottom: 0;
+    color: honeydew;
+}
+.footer-icon{
+    padding: 20px 10px;
+}
+#footer a{
+    color: honeydew;
+}
+#footer a:hover{
+    color: rgb(144, 144, 144);
+}
+/* top button */
+#back2Top {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 999; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: #4D4D4D; /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 50%; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+    overflow: hidden;
+}
+#back2Top:hover {
+    text-decoration: none; 
+}
+
+#cookies-eu-banner{
+    background-color: #333333;
+    color: honeydew;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000000000;
+    text-align: center;
+    font-size: 14px;
+}
+#cookies-eu-banner_text{
+    display: inline-flex;
+    margin: 10px 50px;
+}
+#cookies-eu-banner_buttons{
+    display: inline-flex;
+    margin: 10px;
+}
+#cookies-eu-accept{
+    background-color: #333333;
+    color: rgb(238, 253, 238);
+    border: 1px solid honeydew;
+    padding: 5px 10px;
+}
+#cookies-eu-accept:hover{
+    color: rgb(227, 233, 227);
+    border: 1px solid rgb(227, 233, 227);
+}

@@ -1,0 +1,640 @@
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: "Montserrat";
+    font-weight: 300;
+}
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+h1 {
+    font-weight: 300;
+}
+a:link {
+    text-decoration: none;
+}
+a,
+button {
+    outline: none !important;
+}
+.navbar > a,
+.dropdown > a,
+.nav-item > a,
+.dropdown > div.dropdown-menu > a,
+.navbar > a.navbar-brand {
+    position: relative;
+}
+
+/* Body */
+
+/* Nav bar*/
+.dropdown-item.active,
+.dropdown-item:active {
+    background-color: #f6f6f6;
+    font-weight: bold;
+    color: black;
+}
+a.dropdown-item:hover {
+    font-weight: bold;
+}
+.nav-custom {
+    background-color: #333333;
+    /* #004445; */
+}
+.navbar-brand {
+    color: rgb(255, 255, 255);
+    padding-right: 8.4%;
+}
+.container-fluid {
+    padding: 0;
+    height: 10%;
+}
+.form-inline .form-control {
+    width: 400px;
+    text-align: center;
+    margin-left: 27%;
+    position: static;
+    padding-left: 5.5%;
+}
+/* .form-control{
+    margin-left: 67px;
+} */
+a.navbar-brand > h1 {
+    font-size: 1.25rem;
+    padding: 0px;
+    margin: 0px;
+}
+.dropdown > a::before,
+.nav-item > a::before,
+.dropdown > div.dropdown-menu > a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0px;
+    background-color: honeydew;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out 0s;
+}
+.navbar > a.navbar-brand > h1::before {
+    content: "";
+    position: absolute;
+    width: 148px;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: honeydew;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out 0s;
+}
+.dropdown > a:hover::before,
+.nav-item > a:hover::before,
+.navbar > a.navbar-brand > h1:hover::before,
+.dropdown > div.dropdown-menu > a:hover::before {
+    visibility: visible;
+    transform: scaleX(1);
+}
+@media (max-width: 1077px) {
+    .form-inline .form-control {
+        width: 440px;
+    }
+    .dropdown > a:hover::before,
+    .nav-item > a:hover::before,
+    .navbar > a.navbar-brand > h1:hover::before,
+    .dropdown > div.dropdown-menu > a:hover::before {
+        visibility: hidden;
+    }
+}
+@media (min-width: 1500px) {
+    .form-inline .form-control {
+        width: 500px;
+        margin-left: 14%;
+    }
+}
+@media (max-width: 991px) {
+    .form-inline .form-control {
+        display: inline-block;
+        width: auto;
+        vertical-align: middle;
+        margin: auto;
+    }
+    .navbar {
+        text-align: center;
+    }
+}
+
+/* Obrazky */
+#title {
+    height: 350px;
+    width: 100%;
+    margin-top: 56px;
+    text-align: center;
+    background-image: url("../images/uvodni/cesta1916x646.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.title-obrazky {
+    max-height: 30%;
+    width: 100%;
+    padding: 0;
+    margin-top: 50px;
+    text-align: center;
+}
+.text_center {
+    position: absolute;
+    top: 30%;
+    right: 50%;
+    bottom: 70%;
+    transform: translate(50%, 50%) !important;
+    color: white;
+}
+#cp_title h2 {
+    font-size: 3.5rem;
+    font-weight: bold;
+}
+#cp_subtitle h2 {
+    font-family: "Indie Flower", cursive;
+    font-size: x-large;
+}
+.testimonial-img {
+    max-height: 30%;
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+.carousel-control-prev {
+    margin-left: 1%;
+}
+.carousel-control-next {
+    margin-right: 1%;
+}
+ol {
+    margin-bottom: 5px;
+}
+.isVisible2,
+.isVisible4,
+.isVisible6,
+.isVisible8 {
+    display: none;
+}
+@media (max-width: 1600px) {
+    #title {
+        height: 270px;
+    }
+    div.nadpisCentered > h2 {
+        font-size: 1.7rem;
+    }
+}
+@media (max-width: 991px) {
+    .isVisible1,
+    .isVisible3,
+    .isVisible5,
+    .isVisible7 {
+        display: none;
+    }
+    .isVisible2,
+    .isVisible4,
+    .isVisible6,
+    .isVisible8 {
+        display: inline-block;
+    }
+}
+@media (max-width: 767px) {
+    #title {
+        height: 180px;
+        background-image: url("../images/uvodni/cesta1916x646_mini.jpg");
+        background-attachment: scroll;
+    }
+    div.nadpisCentered > h2 {
+        font-size: 1.7rem;
+    }
+    .text_center {
+        top: 4%;
+    }
+}
+
+/* dlazdice */
+#kategorie {
+    padding: 3%;
+    padding-top: 2%;
+    text-align: center;
+    background-color: #ffffff;
+}
+#kategorie > h2 {
+    font-weight: 500;
+    margin: 0px auto 30px auto;
+    padding: 0;
+}
+.size {
+    padding: 0;
+}
+.leftcol {
+    max-width: 95%;
+    height: auto;
+}
+.tdleft {
+    width: 80%;
+}
+.tdright {
+    text-align: center;
+    background-color: #333333;
+    border-radius: 15px;
+    width: 15%;
+    color: honeydew;
+    padding: 2%;
+    margin: auto;
+}
+a.aPridat {
+    text-decoration: none;
+    /* color: rgb(25, 116, 221);  */
+    color: white;
+    font-weight: 600;
+}
+a.aPridat:hover {
+    color: rgb(86, 162, 248);
+}
+#podelit {
+    font-size: 1.4rem;
+}
+
+@media (max-width: 1100px) {
+    tr td {
+        display: block;
+    }
+    .tdleft {
+        /* text-align: center; */
+        width: 100%;
+        /* margin: auto; */
+        padding-right: 3.4%;
+    }
+    .leftcol {
+        max-width: 100%;
+        margin: auto;
+    }
+    .tdright {
+        margin: 4% auto;
+        width: 70%;
+    }
+    .size {
+        /* max-width: 200px; */
+        width: 100%;
+    }
+}
+.row-center {
+    text-align: center;
+}
+.row {
+    /* padding-left: 5px; */
+    margin: auto;
+    width: 100%;
+}
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
+    margin: 5px 5px 5px 5px;
+    overflow: hidden;
+}
+.container img {
+    transition: transform 0.5s ease;
+}
+.container:hover img {
+    transform: scale(1.3);
+    filter: blur(1.5px);
+}
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    font-size: 1.4rem;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+/* blog */
+#blog_upoutavka {
+    color: white;
+    height: 350px;
+    padding: 3% 6%;
+    text-align: center;
+    background-color: black;
+    background-image: url("../images/uvodni/earthmap.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#blog_upoutavka > h2 {
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+#blog_upoutavka > p {
+    width: 70%;
+    text-align: justify;
+    margin: auto;
+    margin-top: 40px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 15px 20px;
+}
+#blog_upoutavka > a > button,
+#pridat > a > button {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid white;
+    border-radius: 25px;
+    color: white;
+    font-weight: bold;
+    padding: 5px 20px;
+    margin: 40px auto 0 auto;
+    animation: blinker 1.2s linear infinite alternate;
+    width: 250px;
+}
+#pridat > a > button {
+    margin: 20px auto 20px auto;
+}
+#blog_upoutavka > a > button:hover,
+#pridat > a > button:hover {
+    animation: none;
+}
+@keyframes blinker {
+    from {
+        opacity: 0.4;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+    color: white;
+    font-weight: bold;
+}
+.button span:after {
+    content: "\00bb";
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+.button:hover span {
+    padding-right: 20px;
+}
+.button:hover {
+    background-color: white;
+}
+.button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+@media (max-width: 760px) {
+    #blog_upoutavka {
+        height: 580px;
+        background-attachment: scroll;
+    }
+}
+
+/* o nás*/
+#onas {
+    padding: 3% 6%;
+    text-align: center;
+}
+#onas > h2 {
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+#onas > p {
+    max-width: 80%;
+    margin: auto;
+    padding: 0%;
+    text-align: justify;
+}
+@media (max-width: 720px) {
+    #onas {
+        padding: 3% 8%;
+    }
+}
+
+/* oblibene */
+#aktualne {
+    padding: 3%;
+    text-align: center;
+    background-color: #f6f6f6;
+    /* background-color: #f6f6f6 */
+    /* #f8b400; */
+}
+.pricing-column {
+    padding: 40px 30px;
+    min-width: 20%;
+    height: auto;
+    margin: auto;
+}
+h3.card-title {
+    font-weight: 300;
+    font-size: 1.2rem;
+    margin-bottom: 0rem;
+}
+.img-animation {
+    overflow: hidden;
+}
+a.oblibene {
+    text-decoration: none;
+    color: black;
+}
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.card-body {
+    padding: 1.25rem 0.5rem;
+}
+.responsive_slick {
+    max-width: 80%;
+    margin: auto;
+    padding-top: 1%;
+}
+.slick-prev:before,
+.slick-next:before {
+    color: black !important;
+}
+#aktualne > h2 {
+    font-weight: 400;
+    margin-bottom: 0;
+}
+.card-img,
+.card-img-top {
+    width: 100%;
+    max-height: 242px;
+}
+/* pridat */
+#pridat {
+    padding: 2%;
+    background-color: #ffffff;
+    background-image: url("../images/uvodni/pridat.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: black;
+    text-align: center;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+@media only screen and (max-device-width: 900px) {
+    #pridat {
+        background-attachment: scroll;
+    }
+}
+#selectCategory {
+    width: 30%;
+}
+input[type="text"] {
+    width: 45%;
+}
+.imgFloat {
+    float: right;
+    max-width: 30%;
+    max-height: 20%;
+    right: 16%;
+    position: absolute;
+}
+/* .btn-primary, .btn-primary:active{
+    background-color:  #4D4D4D !important;
+    border-color:  #4D4D4D !important;
+    color: honeydew !important;
+    box-shadow: none !important;
+    font-weight: bolder;
+    border-radius: 8px;
+}
+
+button[name=button]:hover{
+    background-color: rgb(139, 141, 143) !important;
+    border-color: rgb(139, 141, 143) !important;
+} */
+.imageUpload {
+    border: dashed;
+    border-radius: 5px;
+    border-color: white;
+    border-width: 1px;
+    padding: 2% 4% 2% 4%;
+    width: 70%;
+    text-align: center;
+    font-weight: 300;
+    /* background-image: url("../images/uvodni/pridat.jpg");
+    background-attachment: fixed; */
+    background-color: rgba(255, 255, 255, 0.4);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    margin: 2% auto;
+}
+#h2_pridat {
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 3%;
+}
+@media (max-width: 720px) {
+    #pridat {
+        background-image: url("../images/uvodni/pridat_mini.jpg");
+    }
+    .imageUpload {
+        width: 95%;
+    }
+    input[type="text"],
+    #selectCategory {
+        width: 80%;
+    }
+    h2 {
+        font-size: 1.6rem;
+        margin-top: 30px;
+    }
+    .text_center h2{
+        margin-top: 5px;
+    }
+    #onas {
+        margin-bottom: 30px;
+    }
+    .btn {
+        margin: 10px auto;
+    }
+    #h2_pridat {
+        margin-bottom: 20px;
+    }
+}
+
+/* Footer Section */
+#footer {
+    text-align: center;
+    background-color: #333333;
+    /* #2c786c; */
+    padding-bottom: 5px;
+    margin-bottom: 0;
+    color: honeydew;
+}
+.footer-icon {
+    padding: 20px 10px;
+}
+#footer a {
+    color: honeydew;
+}
+#footer a:hover {
+    color: rgb(144, 144, 144);
+}
+/* top button */
+#back2Top {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 999; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: #4d4d4d; /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 50%; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+    overflow: hidden;
+}
+#back2Top:hover {
+    text-decoration: none;
+}
+
+#cookies-eu-banner {
+    background-color: #333333;
+    color: honeydew;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000000000;
+    text-align: center;
+    font-size: 14px;
+}
+#cookies-eu-banner_text {
+    display: inline-flex;
+    margin: 10px 50px;
+}
+#cookies-eu-banner_buttons {
+    display: inline-flex;
+    margin: 10px;
+}
+#cookies-eu-accept {
+    background-color: #333333;
+    color: rgb(238, 253, 238);
+    border: 1px solid honeydew;
+    padding: 5px 10px;
+}
+#cookies-eu-accept:hover {
+    color: rgb(227, 233, 227);
+    border: 1px solid rgb(227, 233, 227);
+}

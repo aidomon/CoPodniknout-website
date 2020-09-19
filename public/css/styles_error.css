@@ -1,0 +1,326 @@
+body{
+    font-family: "Montserrat";
+    font-weight: 300;
+}
+a:link{
+    text-decoration: none;
+}
+.navbar > a, .dropdown > a, .nav-item > a, .dropdown > div.dropdown-menu > a,.navbar > a.navbar-brand{
+    position: relative;
+}
+#udalosti{
+    padding: 3%;
+    text-align: center;
+    background-color: white;
+}
+h5{
+    color: black;
+}
+h1{
+    font-weight: 300;
+}
+/* Body */
+/* Nav bar*/
+a.navbar-brand > h1{
+    font-size: 1.25rem;
+    padding: 0px;
+    margin: 0px;
+}
+.nav-custom {
+    background-color:  #333333;
+    /* #004445; */
+}
+.dropdown-item.active, .dropdown-item:active {
+    background-color: #f6f6f6;
+    font-weight: bold;
+    color: black;
+}
+a.dropdown-item:hover{
+    font-weight: bold;
+}
+.navbar-brand{
+    color: rgb(255, 255, 255);
+    padding-right: 5.9%;
+}
+.container-fluid{
+    padding: 0;
+    height: 10%;
+}
+.form-inline .form-control {
+    width: 500px;
+    text-align: center;
+    margin-left: 24%;
+    position: static;
+}
+.dropdown > a::before, .nav-item > a::before, .dropdown > div.dropdown-menu > a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0px;
+    background-color: honeydew;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out 0s;
+}
+.navbar > a.navbar-brand > h1::before {
+    content: "";
+    position: absolute;
+    width: 148px;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: honeydew;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out 0s;
+}
+.dropdown > a:hover::before, .nav-item > a:hover::before, .navbar > a.navbar-brand > h1:hover::before, .dropdown > div.dropdown-menu > a:hover::before {
+    visibility: visible;
+    transform: scaleX(1);
+}
+@media (max-width: 1077px){
+    .form-inline .form-control {
+        width: 440px;
+    }
+    .dropdown > a:hover::before, .nav-item > a:hover::before, .navbar > a.navbar-brand > h1:hover::before, .dropdown > div.dropdown-menu > a:hover::before {
+        visibility: hidden;
+    }
+}
+@media (min-width: 1500px){
+    .form-inline .form-control {
+        width: 600px;
+        margin-left: 14%;
+    }
+}
+@media (max-width: 991px){
+    .form-inline .form-control {
+        display: inline-block;
+        width: auto;
+        vertical-align: middle;
+        margin: auto;
+    }
+    .navbar{
+        text-align: center;
+    }
+}
+/* Obrazky */
+.title-obrazky{
+    max-height: 30%;
+    width: 100%;
+    padding: 0;
+    margin-top: 50px;
+    text-align: center;
+}
+.testimonial-img{
+    max-height: 30%;
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+.carousel-control-prev{
+    margin-left: 1%;
+}
+.carousel-control-next{
+    margin-right: 1%;
+}
+ol{
+    margin-bottom: 5px;
+}
+.isVisible2, .isVisible4, .isVisible6, .isVisible8 {
+    display: none;
+}
+@media (max-width: 991px){
+    .isVisible1, .isVisible3, .isVisible5, .isVisible7 {
+        display: none;
+    }
+    .isVisible2, .isVisible4, .isVisible6, .isVisible8 {
+        display: inline-block;
+    }
+}
+/* seznam událostí */
+#error{
+     margin: 3% auto;
+}
+.nadpis{
+    text-align: center;
+    margin: auto;
+    border: solid;
+    border-color: #DAA520;
+    min-width: 260px;
+    max-width: 430px;
+    padding: 1% 1%;
+    margin-bottom: 6%;
+}
+.udalost_center{
+    align-content: center;
+    margin: 0 auto;
+    max-width: 70%;
+    max-height: 15%;
+}
+.udalost_center:hover{
+    background-color: #f6f6f6;
+}
+.imgCenter{
+    margin: auto;
+    padding-left: 10px;
+}
+a.aTag{
+    text-decoration: none;
+    color: black;
+}
+.card{
+    border: none;
+}
+.line{
+    color: rgb(231, 232, 236);
+    width: 70%;
+    line-height: 15px;
+}
+.textCentered {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 600;
+    font-size: 3rem;
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.errorimage2 {
+    display: none;
+}
+@media (max-width: 767px){
+    .col-md-8{
+        display: none;
+    }
+    .imgCenter{
+        width: 100%;
+    }
+    .textCentered{
+        display: inline-block;
+    }
+    .nadpis{
+        margin-top: 2%;
+    }
+    div.textCentered{
+        font-size: xx-large;
+    }
+    #udalosti > h4 {
+        font-size: x-large;
+    }
+    #error{
+        margin: 35% auto;
+    }
+    .errorimage2 {
+        display: inline-block;
+    }
+    .errorimage1 {
+        display: none;
+    }
+}
+@media (max-width: 600px){
+    .col-md-8{
+        display: none;
+    }
+    .imgCenter{
+        width: 100%;
+    }
+    .udalost_center{
+        max-width: 100%;
+    }
+    .line{
+        width: 95%;
+    }
+    .textCentered{
+        display: inline-block;
+    }
+    .nadpis{
+        margin-top: 2%;
+    }
+    div.textCentered{
+        font-size: xx-large;
+    }
+    #udalosti > h4 {
+        font-size: large;
+    }
+    #error{
+        margin: 27% auto 45px auto;
+    }
+    .errorimage2 {
+        display: inline-block;
+    }
+    .errorimage1 {
+        display: none;
+    }
+}
+/* Footer Section */
+#footer{
+    text-align: center;
+    background-color: #333333;
+    /* #2c786c; */
+    padding-bottom: 5px;
+    margin-bottom: 0;
+    color: honeydew;
+}
+.footer-icon{
+    padding: 20px 10px;
+}
+#footer a{
+    color: honeydew;
+}
+#footer a:hover{
+    color: rgb(144, 144, 144);
+}
+/* top button */
+#back2Top {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 999; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: #4D4D4D; /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 50%; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+    overflow: hidden;
+}
+#back2Top:hover {
+    text-decoration: none; 
+}
+
+#cookies-eu-banner{
+    background-color: #333333;
+    color: honeydew;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000000000;
+    text-align: center;
+    font-size: 14px;
+}
+#cookies-eu-banner_text{
+    display: inline-flex;
+    margin: 10px 50px;
+}
+#cookies-eu-banner_buttons{
+    display: inline-flex;
+    margin: 10px;
+}
+#cookies-eu-accept{
+    background-color: #333333;
+    color: rgb(238, 253, 238);
+    border: 1px solid honeydew;
+    padding: 5px 10px;
+}
+#cookies-eu-accept:hover{
+    color: rgb(227, 233, 227);
+    border: 1px solid rgb(227, 233, 227);
+}

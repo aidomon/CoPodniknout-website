@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-170994973-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
+            gtag("config", "UA-170994973-1");
+        </script>
+
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="<%= trip.description %>" />
+        <meta name="keywords" content="<%= trip.title %>, z brna, výlet, tipy, copodniknout, co podniknout<%= trip.keywords %>" />
+        <meta name="copyright" content="copodniknout.cz" />
+        <meta name="robots" content="all,follow" />
+        <meta name="author" content="Dominik Richter" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://copodniknout.cz/images/<%= trip.url %>/<%= trip.images[0] %>" />
+        <meta property="og:image:alt" content="<%= trip.title %> - Co Podniknout" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="800" />
+        <meta property="og:locale" content="cs_CZ" />
+        <meta property="og:site_name" content="copodniknout.cz, zkoušíme výlety a sdílíme naše zážitky a doporučení" />
+        <meta property="og:title" content="<%= trip.title %> - Co podniknout" />
+        <meta property="og:url" content="https://copodniknout.cz/<%= trip.category[0] %>/<%= trip.url %>" />
+        <meta property="og:description" content="<%= trip.description %>" />
+
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon.ico" />
+        <title><%= trip.title %> - Co podniknout</title>
+
+        <!-- Google fonts -->
+        <link rel="preload" href="https://fonts.googleapis.com/css?family=Montserrat:300,500&display=swap" as="style" onload="this.rel='stylesheet'" />
+        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Kalam:wght@300&display=swap" as="style" onload="this.rel='stylesheet'" />
+
+        <!-- CSS stylesheets -->
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="/css/styles_udalost.css" />
+
+        <!-- Font Awesome -->
+        <script async src="https://kit.fontawesome.com/4b1b0d5500.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+        <!-- Bootstrap -->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"
+        ></script>
+
+        <!-- Button script -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script async src="/scripts/button_script.js"></script>
+
+        <!-- slick -->
+        <link rel="stylesheet" type="text/css" href="/slick/slick.css" />
+        <link rel="stylesheet" type="text/css" href="/slick/slick-theme.css" />
+        <script type="text/javascript" src="/slick/slick.js"></script>
+        <script src="/scripts/slick_img.js"></script>
+    </head>
+    <body>
+        <div id="cookies-eu-banner" style="display: none">
+            <div id="cookies-eu-banner_text">Tento web používá k poskytování služeb a analýze návštěvnosti soubory cookie. Používáním tohoto webu s tím souhlasíte.</div>
+            <div id="cookies-eu-banner_buttons">
+                <!-- <a href="./read-more.html" id="cookies-eu-more">Read more</a> -->
+                <button id="cookies-eu-accept">Rozumím</button>
+            </div>
+        </div>
+
+        <a id="back2Top" href="#">Nahoru</a>
+        <div class="container-fluid">
+            <!-- Nav Bar -->
+            <nav class="navbar fixed-top navbar-expand-lg navbar-dark nav-custom">
+                <a class="navbar-brand mr-auto" href="/"><h1>Co Podniknout</h1></a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarTogglerDemo01"
+                    aria-controls="navbarTogglerDemo01"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <form class="form-inline" action="/vyhledavani" method="post">
+                                <input class="form-control" name="vyhledavani" type="search" placeholder="Výlet, který hledáte" aria-label="Search" />
+                            </form>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Kategorie </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="/na-kole">Na kole</a>
+                                <a class="dropdown-item" href="/hrady-a-zamky">Hrady & zámky</a>
+                                <!-- <a class="dropdown-item" href="../html/udalosti_seznam.html">Divadlo a kino</a> -->
+                                <a class="dropdown-item" href="/rozhledny-a-zriceniny">Rozhledny & zříceniny</a>
+                                <a class="dropdown-item" href="/prochazky-prirodou">Procházky přírodou</a>
+                                <a class="dropdown-item" href="/pro-pary-a-kamarady">Pro páry & kamarády</a>
+                                <!-- <a class="dropdown-item" href="../html/udalosti_seznam.html">S kamarády</a> -->
+                                <a class="dropdown-item" href="/s-rodinou">S rodinou</a>
+                                <!-- <div class="dropdown-divider"></div> -->
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link a-navbar" href="/#onas1">O nás</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link a-navbar" href="/#oblibene">Oblíbené</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link a-navbar" href="/#pridat">Přidat</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <section id="title">
+            <div class="center">
+                <% if((trip.images).length >= 1){ %> <% for (i = 0; i < (trip.images).length; i++){ %> <% if((trip.images_alt).length >= 1){ %>
+                <div><img src="/images/<%= trip.url %>/<%= trip.images[i] %>" loading="lazy" alt="<%= trip.images_alt[i] %>, CoPodniknout" /></div>
+                <% } else {%>
+                <div><img src="/images/<%= trip.url %>/<%= trip.images[i] %>" loading="lazy" alt="<%= trip.title %>, CoPodniknout" /></div>
+                <% } %> <% } %> <% } else {%>
+                <img src="/images/imagerror.jpg" alt="" />
+                <% } %>
+            </div>
+        </section>
+
+        <section id="menu">
+            <ul>
+                <li><a href="#popis">Popis</a></li>
+                <li><a href="#mapa">Mapa</a></li>
+                <!-- <li><a href="#komentare">Komentáře</a></li> -->
+            </ul>
+        </section>
+
+        <section id="udalost">
+            <div class="newDesign">
+                <p id="catLink"><%- trip.category_str %></p>
+                <h2 style="font-weight: 600"><%= (trip.title).toUpperCase() %></h2>
+                <p style="text-align: center; margin: auto">
+                    <% if((trip.duration).length != 0){ %> Délka: <%= trip.duration %><br />
+                    <% } %> <% if((trip.severity).length != 0){ %> Náročnost: <%= trip.severity %><br />
+                    <% } %> <% if((trip.dog).length != 0){ %> Se psem: <%= trip.dog %><br id="popis" />
+                    <% } %> <% try{ %> <% if((trip.open).length > 0){ %> Otevírací doba: <%- trip.open %> <% } %> <% } catch(err) { %> <% } %>
+                </p>
+            </div>
+
+            <p class="textJustify"><%= trip.history %></p>
+
+            <div class="popis">
+                <img src="/images/udalost/kompas.png" loading="lazy" alt="kompas" class="obrazek" />
+                <!-- <h3><span><img src="../turist_znacky/Group 5.png" alt="" style="max-height: 40px; margin-right: 20px;"> Jak se tam dostanete <img src="../turist_znacky/Group 2.png" alt="" style="max-height: 40px; margin-left: 20px;"></span></h3>  -->
+                <h3>Jak se tam dostanete</h3>
+                <% (trip.text1).forEach(element => { %>
+                <p class="textJustify"><%- element %></p>
+                <br />
+                <% }); %>
+
+                <img src="/images/udalost/kemp.png" loading="lazy" alt="stan" class="obrazek" />
+                <h3><span>Naše zážitky a doporučení</span></h3>
+                <% (trip.text2).forEach(element => { %>
+                <p class="textJustify"><%- element %></p>
+                <br />
+                <% }); %> <% try{ %> <% if((trip.text3[0]).length != 0){ %>
+                <img src="/images/udalost/batoh.png" loading="lazy" alt="batoh" class="obrazek" />
+                <h3><span>Něco k zamyšlení</span></h3>
+                <% (trip.text3).forEach(element => { %>
+                <p class="textJustify"><%- element %></p>
+                <br />
+                <% }); %> <% } %> <% } catch(err) { %> <% } %> <% try{ %> <% if((trip.entry[0]).length > 0){ %>
+                <img src="/images/udalost/entry.png" loading="lazy" alt="vstup" class="obrazek" />
+                <h3><span>Vstupné a další info</span></h3>
+                <% (trip.entry).forEach(element => { %>
+                <p class="textJustify"><%- element %></p>
+                <br />
+                <% }); %> <% } %> <% } catch(err) { %> <% } %>
+            </div>
+
+            <div id="mapa">
+                <hr class="line" />
+                <h3 style="color: #daa520">Mapa</h3>
+                <iframe src="<%= trip.map %>" loading="lazy" alt="mapa" width="100%" height="450" frameborder="0" style="border: 0" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                <!-- https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5836.2069468140835!2d16.64882697758383!3d49.28132887336714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4712926803e77bd7%3A0xa8cd5cdad4d02db!2zU3R1ZMOhbmthIE11ZmxvbsOt!5e0!3m2!1scs!2scz!4v1584474431145!5m2!1scs!2scz -->
+            </div>
+        </section>
+
+        <!-- <section id="komentare">
+        <h3>Komentáře</h3>
+        <div>
+            Tady budou komentáře :)
+        </div>
+        </section> -->
+
+        <!-- Footer -->
+        <footer id="footer">
+            <!-- <i class="footer-icon fab fa-facebook-f"></i> -->
+            <a target="_blank" href="https://www.instagram.com/copodniknout.cz/">
+                <i class="footer-icon fab fa-instagram"></i>
+            </a>
+            <a href="mailto:copodniknout@gmail.com">
+                <i class="footer-icon fas fa-envelope"></i>
+            </a>
+            <p>
+                <a href="https://copodniknout.cz/na-kole">Výlet na kole</a> | <a href="https://copodniknout.cz/hrady-a-zamky">Hrady a zámky</a> |
+                <a href="https://copodniknout.cz/rozhledny-a-zriceniny">Rozhledny a zříceniny</a> | <a href="https://copodniknout.cz/prochazky-prirodou">Procházky přírodou</a> |
+                <a href="https://copodniknout.cz/pro-pary-a-kamarady">Pro páry a kamarády</a> | <a href="https://copodniknout.cz/s-rodinou">Výlet s rodinou</a>
+            </p>
+            <p>Všechna práva vyhrazena. Veškerý obsah této webové stránky podléhá autorským právům.</p>
+            <p>© Copyright 2020 copodniknout.cz - Ať každý ví, co podniknout.</p>
+        </footer>
+
+        <script src="/scripts/cookies-eu-banner.min.js"></script>
+        <script>
+            new CookiesEuBanner(function () {});
+        </script>
+    </body>
+</html>
