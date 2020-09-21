@@ -9,7 +9,7 @@ $(() => {
 
   const TIMELINE_VALUES = {
     start: 350,
-    step: 90 };
+    step: 60 };
 
 
   $(window).resize(function () {

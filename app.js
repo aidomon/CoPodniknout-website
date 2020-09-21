@@ -6,7 +6,7 @@ const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const _ = require("lodash");
 const mongoose = require("mongoose");
-const options = require('./options');
+const options = require("./options");
 
 const app = express();
 app.use(compression());
@@ -61,7 +61,9 @@ const Blog = mongoose.model(options.name[1], blogSchema);
 const blog_commentSchema = new mongoose.Schema(
     {
         blog_name: String,
-        comments: Array,
+        name: String,
+        comment: String,
+        time: String,
     },
     { collection: options.collection[2] }
 );
@@ -146,7 +148,7 @@ app.get("/blog/vyhledavani/:dotaz", function (req, res) {
 });
 
 app.get("/blog/zkouska", function (req, res) {
-    res.send("<form action='/blog/zkouska' method='post'><input type='text' name='text' id=''><input type='submit' value='Submit'></form>");
+    //res.send("<form action='/blog/zkouska' method='post'><input type='text' name='text' id=''><input type='submit' value='Submit'></form>");
     // Blog_commment.findOne({blog_name: "ahoj"}, function(err, result){
     //     console.log(result);
     //     res.send(result);
@@ -154,13 +156,36 @@ app.get("/blog/zkouska", function (req, res) {
     // Blog_comment.updateOne({blog_name: "ahoj2"}, { $push: { comments: "hruza" }}, function(err, result){
     //     res.send(result);
     // });
-    // Blog_comment.create({ blog_name: "zdar", comments: "hruza" }, function (err, small) {
-    //     if (err) return handleError(err);
-    //   });
+    Blog_comment.create({ blog_name: "Třetí den", name: "Dalibor", comment: "ahoj", time: "1" }, function (err, small) {
+        if (err) return handleError(err);
+    });
+    res.send("jo");
 });
-app.post("/blog/zkouska", function (req, res) {
-    console.log(req.body.text);
-    res.send(req.body.text);
+
+app.post("/blog/komentar", function (req, res) {
+    //console.log(req.body.komentar + "<br>" + req.body.jmeno + "<br>" + req.body.blog);
+    var date = new Date();
+    var current_date = date.getDate() + ". " + (date.getMonth() + 1) + ". " + date.getFullYear() + " " + date.getHours() + ":" + (date.getMinutes() < 10 ? "0" : "") + date.getMinutes();
+
+    //Blog_comment.updateOne({ blog_name: req.body.blog }, { $push: { name: req.body.jmeno, comment: req.body.komentar, time: current_date } }, function (err, result) {});
+
+    Blog_comment.create({ blog_name: req.body.blog, name: req.body.jmeno, comment: req.body.komentar, time: current_date }, function (err, small) {
+        if (err) return handleError(err);
+    });
+
+    //res.render("blog_konkretni", { blog: result, time: current_date });
+    //res.status(204).send();
+    res.redirect("/blog/" + req.body.blogURL + "/#komentare");
+});
+
+app.get("/blog/prispevky", function (req, res) {
+    Blog.find({}, function (err, result) {
+        if (result == null) {
+            res.sendFile(__dirname + "/views/blog_error.html");
+        } else {
+            res.render("blog_prispevky", { blogs: result.reverse() });
+        }
+    });
 });
 
 app.get("/blog/:prispevek", function (req, res) {
@@ -168,8 +193,10 @@ app.get("/blog/:prispevek", function (req, res) {
         if (result == null) {
             res.sendFile(__dirname + "/views/blog_error.html");
         } else {
+            Blog_comment.find({ blog_name: result.title }, function (err, comments) {
+                res.render("blog_konkretni", { blog: result, blog_comments: comments });
+            });
             //console.log(result.category);
-            res.render("blog_konkretni", { blog: result });
         }
     });
 });

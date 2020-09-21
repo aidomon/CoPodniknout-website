@@ -137,7 +137,6 @@
                 <div id="blog_title"><%= blog.title %></div>
                 <div id="blog_subtitle"><%= blog.title_description %></div>
             </div>
-            
         </section>
         <section id="content">
             <article class="timeline">
@@ -146,6 +145,7 @@
                         <% (blog.content_headers).forEach(element => { %>
                         <li><span><%= element %></span></li>
                         <% }); %>
+                        <li><span>Komentáře</span></li>
                     </ul>
                 </nav>
                 <div class="timeline__section">
@@ -154,7 +154,7 @@
                         <p><%= blog.title_description %></p>
                     </div>
                     <div class="wrapper">
-                        <div data-aos="fade-left" data-aos-duration="1800" data-aos-delay="250" style="margin-top: 23px;">
+                        <div data-aos="fade-left" data-aos-duration="1800" data-aos-delay="250" style="margin-top: 23px">
                             <% try{ %> <% (blog.content_introduction).forEach(element => { %>
                             <p><%- element %></p>
                             <% }) %> <% } catch{} %>
@@ -167,9 +167,47 @@
                             <% } %>
                         </div>
                         <% } %>
+
+                        <div id="komentare">
+                            <hr />
+                            <h3 class="milestone">Komentáře</h3>
+                            <div id="comments_view">
+                            <% if(blog_comments.length){ %>
+                                <% blog_comments.forEach(element => { %>
+                                <div class="comment">
+                                    <div class="comment_header">
+                                        <i class="far fa-comment"></i>
+                                        <div>
+                                            <h4><%= element.name %></h4>
+                                            <p><%= element.time %></p>
+                                        </div>
+                                    </div>
+                                    <!-- <a href=""><button class="reply_button">Odpovědět</button></a> -->
+                                    <p class="comment_p"><%= element.comment %></p>
+                                </div>
+                                <% }); %> 
+                            </div>
+                            <% } else { %>
+                                    <p id="no_comment">Zatím žádné komentáře</p>
+                                </div>
+                                <% } %>
+                            
+                            <div id="add_comment">
+                                <h3>Napsat komentář</h3>
+                                <form action="/blog/komentar" method="post">
+                                    <textarea name="komentar" placeholder="Sem napište Váš komentář" required></textarea>
+                                    <input type="text" name="jmeno" placeholder="Jméno" required/>
+                                    <input style="height: 2px; visibility: hidden" name="blog" value="<%= blog.title %>" />
+                                    <input style="height: 2px; visibility: hidden" name="blogURL" value="<%= blog.url %>" /><br>
+                                    <button type="submit" id="add_comment_button">Přidat komentář</button>
+                                </form>
+                            </div>
+                            <hr />
+                        </div>
                     </div>
                 </div>
             </article>
+
             <div id="buttons">
                 <a href="/blog"
                     ><button class="button"><span>DOMŮ </span></button></a

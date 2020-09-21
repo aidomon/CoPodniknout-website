@@ -135,7 +135,9 @@
             <h2>Všechny příspěvky</h2>
 
             <div id="flexbox">
-                <% var count = 0; %> <% for(i=0; i < blogs.length; i++) { %> <% if(count < 3){ %>
+                 
+                <% for(i=0; i < blogs.length; i++) { %> 
+                    
                     <div class="grid-item">
                         <div class="item-inner" data-aos="fade-up" data-aos-offset="100" data-aos-duration="1000">
                             <div class="item-title"><%= blogs[i].title %></div>
@@ -151,12 +153,12 @@
                                 <p><%= blogs[i].content_text[0][0] %></p>
                                 <% } %> <% } %>
                             </div>
-                            <a href="/blog/<%= blogs[count].url %>"
+                            <a href="/blog/<%= blogs[i].url %>"
                                 ><button class="button"><span>Přečíst </span></button></a
                             >
                         </div>
                     </div>
-                    <% count++; %> <% } else { %> <% break; }%> <% } %>
+                <% } %>
             </div>
             <div id="buttons">
                 <a href="/blog"
